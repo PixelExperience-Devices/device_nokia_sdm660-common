@@ -87,6 +87,9 @@ function blob_fixup() {
                 "${PATCHELF}" --add-needed "libshim_megvii.so" "$MEGVII_SHIM"
             done
             ;;
+        vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy)
+            echo 'madvise: 1' >> ${2}
+            ;;
     esac
 }
 
