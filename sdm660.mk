@@ -182,6 +182,9 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml
 
+# Dolby
+$(call inherit-product, hardware/motorolaDolby/dolby-setup.mk)
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
