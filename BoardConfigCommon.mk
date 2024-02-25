@@ -79,7 +79,7 @@ BOARD_KERNEL_CMDLINE := \
     console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom \
     msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 \
     service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3 \
-    loop.max_part=7 androidboot.boot_devices=soc/c0c4000.sdhci
+    loop.max_part=7 androidboot.boot_devices=soc/c0c4000.sdhci androidboot.super_partition=system
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_SOURCE := kernel/nokia/sdm660
@@ -97,6 +97,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Partitions
 BOARD_USES_SYSTEM_OTHER_ODEX := true
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 TARGET_COPY_OUT_PRODUCT := system/product
